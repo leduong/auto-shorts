@@ -154,17 +154,18 @@ Using Docker is a experimental way to get started with the AutoShorts UI. The Do
 First, clone the AutoShorts repository:
 
 ```bash
-git clone https://github.com/alamshafil/auto-shorts
+git clone https://github.com/leduong/auto-shorts
 cd auto-shorts
 ```
 
 ## Build the Docker image
 
+````bash
 Next, build the Docker image using the provided `Dockerfile`:
 
 ```bash
 docker build -t auto-shorts .
-```
+````
 
 ## Run the Docker container
 
