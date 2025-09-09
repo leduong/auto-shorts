@@ -1,9 +1,10 @@
 # AutoShorts - AI-powered Shorts Generator
 
 > [!WARNING]
-> Unfortunately, I have stopped working on auto-shorts since it was just a learning project for me. I do not have time to continue working on the project. I will keep this project open for minor bug fixes, etc. 
+> Unfortunately, I have stopped working on auto-shorts since it was just a learning project for me. I do not have time to continue working on the project. I will keep this project open for minor bug fixes, etc.
 
 <!-- Badges -->
+
 [![Docs](https://img.shields.io/badge/docs-website-blue)](https://alamshafil.github.io/auto-shorts/)
 [![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/alamshafil/auto-shorts/node.js.yaml)](https://github.com/alamshafil/auto-shorts/actions/workflows/node.js.yaml)
 [![Discord](https://img.shields.io/discord/1288339492633182320?label=discord&logo=discord)](https://discord.gg/wMdjy2NtQy)
@@ -31,7 +32,9 @@ This repo includes a CLI interface and JS interface. The CLI interface is built 
 > This project is in the early stages of development and may have bugs - especially when interacting with AI to generate scripts. This package is not meant to be used in production environments yet. Since AI output is unpredictable, work is being done to make the output more predictable and controllable. If the AI generates an incorrect JSON output, then you can manually edit the JSON output to fix the issue. This package is subject to change and may have breaking changes in the future. Use at your own risk.
 
 # Features
+
 You can generate popular types of short videos seen on YouTube Shorts and TikTok like:
+
 - Text-to-Speech (TTS) videos
 - Topic-based videos with images
 - Text message story videos
@@ -40,22 +43,23 @@ You can generate popular types of short videos seen on YouTube Shorts and TikTok
 - And more...
 
 The topic-based video type can be used to generate videos on a wide range of topics like:
+
 - News-related videos
 - Educational videos
 - Fun facts videos
 - And more...
 
-| Text Message Video | News Video | Quiz Video | Rank Video | Would You Rather Video |
-| --- | --- | --- | --- | --- |
+| Text Message Video                                     | News Video                                      | Quiz Video                                      | Rank Video                                      | Would You Rather Video                                        |
+| ------------------------------------------------------ | ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- | ------------------------------------------------------------- |
 | ![Text Message Video](docs/docs/intro/images/msg.jpeg) | ![News Video](docs/docs/intro/images/news.jpeg) | ![Quiz Video](docs/docs/intro/images/quiz.jpeg) | ![Rank Video](docs/docs/intro/images/rank.jpeg) | ![Would You Rather Video](docs/docs/intro/images/rather.jpeg) |
 
 You can request new video types and tools to be added to the package by creating an issue on the GitHub repo.
 
 # Using local LLMs via Ollama
 
-Note: By default, the package use Ollama to generate scripts. Therefore a working Ollama installation is required. It is recommended to use the `llama3.2` model for fast results. 
+Note: By default, the package use Ollama to generate scripts. Therefore a working Ollama installation is required. It is recommended to use the `llama3.2` model for fast results.
 
-You can install this model by running the following command: `ollama pull llama3.2`. 
+You can install this model by running the following command: `ollama pull llama3.2`.
 
 Using other local models may result in incorrect output.
 
@@ -63,7 +67,7 @@ You can use other AI APIs such as OpenAI ChatGPT 4o, Google Gemini AI, and Anthr
 
 # Install UI Manually
 
-AutoShorts comes with a web UI that allows you to generate videos with a simple interface. The UI is built with Next.js and Express.js. The web UI relies on the backend server. 
+AutoShorts comes with a web UI that allows you to generate videos with a simple interface. The UI is built with Next.js and Express.js. The web UI relies on the backend server.
 
 > [!NOTE]
 > The web UI is in the early stages of development and may have bugs. The UI is not meant to be used in production environments yet. If you encounter any issues, please create an issue on the GitHub repo. Feel free to contribute to the UI by creating a pull request.
