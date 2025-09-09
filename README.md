@@ -202,11 +202,13 @@ npx auto-shorts -p "make a news short about TypeScript"
 ```
 
 You can also run the command interactively and provide the necessary information when prompted:
+
 ```bash
 npx auto-shorts
 ```
 
 For help:
+
 ```bash
 npx auto-shorts --help
 ```
@@ -230,77 +232,80 @@ npx auto-shorts --download [path]
 ```
 
 ## AI-Generated Video
+
 ```javascript
 const task = await genVideoWithAI(
-    "make a news short about TypeScript", // Provide the prompt
-    AIGenType.OpenAIGen, // Use OpenAI to generate the script
-    { 
-        tempPath: 'video_temp', // Provide the path to the temporary video folder
-        resPath: 'res', // Provide the path to the downloaded resources folder
-        voiceGenType: VoiceGenType.ElevenLabsVoice, // Use ElevenLabs to generate the voice
-        imageGenType: ImageGenType.Pexels, // Use Pexels to generate the image
-        apiKeys: {
-            elevenLabsAPIKey: process.env.ELEVENLABS_API_KEY, // Provide the ElevenLabs API key
-            pexelsAPIKey: process.env.PEXELS_API_KEY, // Provide the Pexels API key
-        }
-    }, 
-    process.env.OPENAI_API_KEY // Provide the OpenAI API key
+  "make a news short about TypeScript", // Provide the prompt
+  AIGenType.OpenAIGen, // Use OpenAI to generate the script
+  {
+    tempPath: "video_temp", // Provide the path to the temporary video folder
+    resPath: "res", // Provide the path to the downloaded resources folder
+    voiceGenType: VoiceGenType.ElevenLabsVoice, // Use ElevenLabs to generate the voice
+    imageGenType: ImageGenType.Pexels, // Use Pexels to generate the image
+    apiKeys: {
+      elevenLabsAPIKey: process.env.ELEVENLABS_API_KEY, // Provide the ElevenLabs API key
+      pexelsAPIKey: process.env.PEXELS_API_KEY, // Provide the Pexels API key
+    },
+  },
+  process.env.OPENAI_API_KEY // Provide the OpenAI API key
 );
 
-task.on('log', (log) => {
-    console.info(log);
+task.on("log", (log) => {
+  console.info(log);
 });
 
-task.on('done', (output) => {
-    console.info("--> Video generation complete! Video saved at: " + output);
+task.on("done", (output) => {
+  console.info("--> Video generation complete! Video saved at: " + output);
 });
 ```
 
 ## Manual Video
-```javascript
 
+```javascript
 /** @type {import("auto-shorts").VideoDataType} */
 const data = {
-    type: "topic", // Provide the type of video
-    title: "TypeScript", // Provide the title of the video
-    start_script: "Hello! Today we will be talking about TypeScript.", // Provide the start script of the video
-    end_script: "That's all for today. Thanks for watching!", // Provide the end script of the video
-    images: ["typescript logo"] // Provide the images for the video
+  type: "topic", // Provide the type of video
+  title: "TypeScript", // Provide the title of the video
+  start_script: "Hello! Today we will be talking about TypeScript.", // Provide the start script of the video
+  end_script: "That's all for today. Thanks for watching!", // Provide the end script of the video
+  images: ["typescript logo"], // Provide the images for the video
 };
 
-const task = await genVideoWithJson(
-    data, {
-    tempPath: 'video_temp', // Provide the path to the temporary video folder
-    resPath: 'res', // Provide the path to the downloaded resources folder
-    voiceGenType: VoiceGenType.ElevenLabsVoice, // Use ElevenLabs to generate the voice
-    imageGenType: ImageGenType.Pexels, // Use Pexels to generate the image
-    apiKeys: {
-        elevenLabsAPIKey: process.env.ELEVENLABS_API_KEY, // Provide the ElevenLabs API key
-        pexelsAPIKey: process.env.PEXELS_API_KEY, // Provide the Pexels API key
-    }
+const task = await genVideoWithJson(data, {
+  tempPath: "video_temp", // Provide the path to the temporary video folder
+  resPath: "res", // Provide the path to the downloaded resources folder
+  voiceGenType: VoiceGenType.ElevenLabsVoice, // Use ElevenLabs to generate the voice
+  imageGenType: ImageGenType.Pexels, // Use Pexels to generate the image
+  apiKeys: {
+    elevenLabsAPIKey: process.env.ELEVENLABS_API_KEY, // Provide the ElevenLabs API key
+    pexelsAPIKey: process.env.PEXELS_API_KEY, // Provide the Pexels API key
+  },
 });
 
-task.on('log', (log) => {
-    console.log(log);
+task.on("log", (log) => {
+  console.log(log);
 });
 
-task.on('done', (output) => {
-    console.info("--> Video generation complete! Video saved at: " + output);
+task.on("done", (output) => {
+  console.info("--> Video generation complete! Video saved at: " + output);
 });
 ```
 
 # Tools available
 
 ## Voice Generation
+
 - ElevenLabs
 - Neets.ai
 - Local TTS on system
 
 ## Image Generation
+
 - Pexels
 - Scraper
 
 ## AI Script Generation
+
 - OpenAI (and compatible endpoints like Ollama, Groq, etc.) (e.g., GPT-4o)
 - Google Gemini AI (e.g., Gemini 1.5 Pro/Flash)
 - Anthropic (e.g, Claude)
@@ -313,13 +318,16 @@ This package uses AI tools like OpenAI and ElevenLabs to generate scripts and im
 You need to provide the following API key depending on what tools you want to use:
 
 ## Voice Generation
+
 - ElevenLabs API Key
 - Neets.ai API Key
 
 ## Image Generation
+
 - Pexels API Key
 
 ## AI Script Generation
+
 - OpenAI API Key
 - Google Gemini AI API Key
 - Anthropic (Claude) API Key
@@ -333,12 +341,14 @@ If this package is missing any video types or AI tools that you would like to se
 # Layout
 
 The package is structured as follows:
+
 - `src`: Contains the source code for the package
 - `ui`: Contains the GUI code for the package
 - `test`: Contains test code for the package
 - `packages`: Contains the internal dependencies for the package (forked versions of `ffcreator` and `inkpaint`)
 
 # Todo
+
 - [x] Add GUI
 - [ ] Fix logging
 - [x] Add Docker support
